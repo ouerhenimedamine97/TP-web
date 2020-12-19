@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <h2>Créer un objet à partir d'une chaîne JSON</h2>
+        <p id="demo"></p>
+        <script>
+            var text = '{"etudiant":['+'{"nom":"X","prenom":"Y"},'+
+                        '{"nom":"XX","prenom":"YY"},'+
+                        '{"nom":"XXX","prenom":"YYY"}]}';
+            obj = JSON.parse(text);
+            document.getElementById("demo").innerHTML = obj.etudiant[1].nom + " " + obj.etudiant[1].prenom;
+
+        </script>
+        
+    </body>
+</html>

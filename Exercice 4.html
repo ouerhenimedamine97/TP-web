@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <button>Masquer</button>
+        <p>voila le contenu du pragraphe à masquer.</p>
+        <script>
+            //avec Fonction callback
+            $(document).ready(function(){
+             $("button").click(function(){
+             $("p").hide("slow",
+            function(){
+             alert("Le paragraphe est masqué maintenant");
+             });
+             });
+            });
+            /*
+            //sans Fonction callback
+            $(document).ready(function(){
+            $("button").click(function(){
+            $("p").hide(1000);
+            alert("Le paragraphe est
+            masqué maintenant");
+            });
+            });
+            */
+            </script>
+    </body>
+</html>

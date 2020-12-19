@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <h2>Afficher un fichier JSON depuis une URL</h2>
+        <div id="demo"></div>
+        <script>
+            xmlhttp = new XMLHttpRequest();
+            var url = "http://localhost/TP3_JQuery_AJAX_JSON_PHP-MYSQL/Listeetudiants.json";
+            xmlhttp.readystatechange = function(){
+                if(this.readyState==4 && this.status==200){
+                    var myArr=JSON.parse(this.responseText);
+                    myFunction(myArr);
+                }
+            };
+            xmlhttp.open("GET", url, true);
+            xmlhttp.send();
+            function myFunction(arr){
+                var out="";
+                var i;
+                for(i=0; i<arr.length;i++){
+                    out+=arr[i].nom+ ' ' + arr[i].prenom + '<br>';
+                }
+                document.getElementById("demo").innerHTML=out;
+            }
+        </script>
+    </body>
+</html>
